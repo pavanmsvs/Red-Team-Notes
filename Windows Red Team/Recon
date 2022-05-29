@@ -1,0 +1,56 @@
+# Systeminfo
+systeminfo
+hostname 
+
+# Who are we
+PS C:\Users\alice\Desktop> whoami /fqdn
+whoami /fqdn
+
+PS C:\Users\alice\Desktop> whoami /upn
+alice@ecorp.com
+
+whoami
+
+
+# Especially good with hotfix info
+wmic qfe get Caption,Description,HotFixID,InstalledOn
+
+# What users/localgroups are on the machine?
+net users
+net localgroups
+net localgroup Administrators
+net user morph3
+
+# Crosscheck local and domain too
+net user morph3 /domain
+net group Administrators /domain
+
+# Network information
+ipconfig /all
+route print
+arp -A
+
+# To see what tokens we have 
+whoami /priv
+
+# Recursive string scan
+findstr /spin "password" *.*
+
+# To list all files Recursively
+dir /a-D /S /B
+
+# Running processes
+tasklist /SVC
+
+# Network connections
+netstat -ano
+
+# Search for writeable directories
+dir /a-r-d /s /b
+
+# Running processes
+tasklist /SVC
+
+# To check permissions of us on service vulnsvc
+accesschk.exe /accepteula -uwcqv morph3 vulnsvc
+
